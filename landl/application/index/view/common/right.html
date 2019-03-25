@@ -1,0 +1,49 @@
+<div id="right">
+    <div class="h2css"><h2 class="titleH2">站内搜索</h2></div>
+    <div class="input-group">
+        <form class="form-inline" method="get" action="{:url('Search/index')}">
+            <div class="but-left">
+                <div class="form-group">
+                    <input type="text" name="inkeys" class="form-control" id="" placeholder="请输入搜索内容" required="">
+                </div>
+            </div>
+
+            <div class="but-right">
+                <button type="submit" class="btn btn-default">搜索</button>
+            </div>
+
+        </form>
+
+    </div>
+    <div class="h2css"><h2 class="titleH2">关键字</h2></div>
+    <div id="key-words">
+        <div id="key-words-box">
+            {volist name="keywords" id="vok"}
+            <a class="btn btn-default" href="{:url('Search/index',array('keywords'=>$vok['id']))}" role="button">{$vok.catename}</a>
+            {/volist}
+
+        </div>
+    </div>
+    <div class="h2css"><h2 class="titleH2">友情链接</h2></div>
+    <div id="friend-links">
+        <div id="friend-links-box">
+            {volist name="links" id="vo"}
+            <a class="btn btn-default btn-sm" href="{$vo.url}" role="button">{$vo.title}</a>
+            {/volist}
+        </div>
+    </div>
+    <div class="h2css"><h2 class="titleH2">最近更新</h2></div>
+    <div id="updates">
+        <div id="updates-box">
+            <table class="table table-condensed">
+
+                {volist name="articleTime" id="vot"}
+                <tr>
+                    <td><a href="{:url('article/index',array('articleid'=>$vot['id']))}">{$vot.title}</a></td>
+                </tr>
+                {/volist}
+
+            </table>
+        </div>
+    </div>
+</div>

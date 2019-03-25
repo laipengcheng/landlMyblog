@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <title>landl</title>
+
+    <meta name="description" content="Dashboard">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--Basic Styles-->
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link href="__PUBLIC__/style/lady.css" rel="stylesheet">
+    <link href="__PUBLIC__/style/bootstrap.css" rel="stylesheet">
+    <!--Beyond styles-->
+</head>
+<body>
+
+<!--顶部导航开始-->
+    {include file="common/header" /}
+<!--顶部导航结束-->
+
+<!--首页图片-->
+<div class="other-img"><img src="__PUBLIC__/images/img03.jpg"></div>
+<!--顶部结束-->
+
+<div id="middle">
+<!--左侧开始-->
+
+    <div id="left-article">
+        <h2 class="text-center">{$articles.title}</h2>
+        <h5 class="text-center">作者:{$articles.author}
+            关键词:<a href="{:url('Search/index',array('keywords'=>$articles['cateid']))}">{$articles.cate.catename}</a>&nbsp;&nbsp;
+            发布时间:{$articles['time']|date="Y-m-d",###}</h5>
+        <div class="article-content">
+            {$articles.content}
+        </div>
+    </div>
+<!--左侧结束-->
+<!--右侧开始-->
+    {include file="common/right" /}
+<!--右侧结束-->
+</div>
+
+<!--最右侧-->
+    {include file="common/rright" /}
+
+<!--最右侧结束-->
+
+<!--底部开始-->
+    {include file="common/foot" /}
+<!--底部结束-->
+
+
+
+<!--Basic Scripts-->
+<script type="text/javascript" src="__PUBLIC__/style/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/style/lady.js"></script>
+<script type="text/javascript" src="__PUBLIC__/style/bootstrap.js"></script>
+<!--Beyond Scripts-->
+
+</body>
+</html>
